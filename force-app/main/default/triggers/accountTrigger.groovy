@@ -29,5 +29,8 @@ trigger AccountTrigger on Account (before insert, after insert, before update, a
                 System.debug('Account updated: ' + acc.Name);
             }
         }
+        if (Trigger.isDelete){
+            system.debug('Record deleted successfully');
+        }
     }
 }
