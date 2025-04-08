@@ -15,6 +15,7 @@ trigger AccountTrigger on Account (before insert, after insert, before update, a
     }
 
     if (Trigger.isAfter) {
+        List<Account> accountList = [SELECT Id,Name FROM Account LIMIT 10];
         if (Trigger.isInsert) {
             // Code to execute after inserting new Accounts
             for (Account acc : Trigger.new) {
