@@ -19,6 +19,7 @@ trigger AccountTrigger on Account (before insert, after insert, before update, a
             // Code to execute after inserting new Accounts
             for (Account acc : Trigger.new) {
                 System.debug('Account inserted: ' + acc.Name);
+                system.debug('New changes done for github testing');
             }
         }
         if (Trigger.isUpdate) {
